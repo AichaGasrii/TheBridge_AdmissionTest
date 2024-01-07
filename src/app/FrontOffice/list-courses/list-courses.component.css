@@ -1,0 +1,42 @@
+.course-grid {
+    margin-top: 50px; /* adjust value as needed */
+    margin-bottom: 50px; /* adjust value as needed */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* three items per row */
+    gap: 20px; /* space between cards */
+}
+
+.courses-section {
+    margin-top: 50px; /* adjust value as needed */
+    margin-bottom: 50px; /* adjust value as needed */
+    /* your existing styles */
+}
+
+.course-card {
+    /* your existing styles */
+    border: none; /* if you don't want borders */
+    box-shadow: none; /* if you don't want shadows */
+}
+
+.course-card img {
+    width: 100%; /* to ensure the image covers the card width */
+    height: auto; /* to maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+    .course-grid {
+        grid-template-columns: 1fr; /* one column on small screens */
+    }
+}
+
+.course-card h3 {
+    color: #000000; /* black color for the title */
+    font-weight: bold; /* makes the text bold */
+    /* your existing styles */
+}
+
+.course-card p {
+    color: #c44976; /* pink color for the price */
+    font-weight: bold; /* makes the text bold */
+    /* your existing styles */
+}

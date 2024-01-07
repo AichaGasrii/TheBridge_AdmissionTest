@@ -1,0 +1,15 @@
+.pink-link {
+    color: #c44976; /* Pink color */
+  }
+/* Increase specificity */
+div.d-grid .btn.btn-primary {
+  background-color: #c44976 !important;
+  border-color: #c44976 !important;
+}
+
+/* Change the hover state as well */
+div.d-grid .btn.btn-primary:hover {
+  background-color: #eeaa4b !important;
+  border-color: #eeaa4b !important;
+}
+

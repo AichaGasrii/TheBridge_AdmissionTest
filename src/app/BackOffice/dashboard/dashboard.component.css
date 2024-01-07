@@ -1,0 +1,49 @@
+.view-details i,
+.edit-course i,
+.delete-course i {
+  color: #c44976; /* Pink color; adjust the shade as needed */
+}
+
+.edit-course i {
+  /* Additional styles for edit icon if needed */
+}
+
+.delete-course i {
+  /* Additional styles for delete icon if needed */
+}
+
+.view-details i {
+  /* Additional styles for view details icon if needed */
+}
+.pink-link {
+    color: #c44976; /* Pink color */
+  }
+
+  .table-img-column img {
+    width: 88px; /* Set this to the width of your images */
+    height: auto; /* Set height to auto to maintain aspect ratio */
+  }
+  
+  .table-img-column {
+    width: 88px; /* Set this to the width of your images */
+  }
+
+  .btn-outline-primary {
+    color: #c44976; /* Text color */
+    border-color: #c44976; /* Border color */
+}
+
+.btn-outline-primary:hover {
+    background-color: #c44976; /* Background color on hover */
+    color: white; /* Text color on hover */
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+  
+  

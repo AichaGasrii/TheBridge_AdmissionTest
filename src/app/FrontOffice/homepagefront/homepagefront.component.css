@@ -1,0 +1,136 @@
+/* Start of the CSS file */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    height: 100%; /* Ensure full height */
+}
+
+/* Remove padding and margin from all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and borders in the width and height */
+}
+
+/* Set the content and main page to full width and enable them to take up the full height */
+.page-content, .page-main {
+    width: 100%;
+    min-height: 100vh; /* Minimum height of 100% of the viewport height */
+    margin: 0 auto; /* Center content if needed */
+    position: relative; /* For absolute positioning of children */
+}
+
+/* Ensure the grid takes up the full width */
+.uk-grid {
+    margin-left: 0 !important; /* Remove any default margin */
+    margin-right: 0 !important; /* Remove any default margin */
+    width: 100% !important; /* Force full width */
+}
+
+/* Static Image Section styles */
+.static-image-section {
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    position: relative; /* Needed for absolute positioning of child elements */
+}
+
+.static-image-section .image-container {
+    width: 100%; /* Full width of the static-image-section */
+    height: 100%; /* Full height of the static-image-section */
+    background-size: cover; /* Cover the entire width and height of the container */
+    background-position: center center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    position: relative; /* Relative to the .static-image-section */
+}
+
+/* Overlay styles */
+.overlay {
+    position: absolute; /* Overlay on top of the image container */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Text and button styles within the overlay */
+.text-container {
+    text-align: center;
+    color: white;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+}
+
+.text-container h2 {
+    font-size: 2em; /* Keep your current font size */
+    margin-bottom: 0.5em; /* Keep your current margin */
+    color: black; /* Set text color to black */
+    font-weight: bold; /* Make the font bold */
+}
+
+
+.text-container p {
+    font-size: 1em; /* Adjust the font size if needed */
+    margin-bottom: 1em;
+}
+
+.register-button {
+    padding: 12px 50px;
+    background-color: #c44976; /* Pink color for the button */
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    font-weight: normal;
+}
+
+.register-button:hover {
+    background-color: #a9355b; /* Darker shade of pink for hover effect */
+}
+
+
+.courses-section {
+    margin-top: 60px;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out the children elements */
+    align-items: center; /* Align children vertically */
+    width: 100%; /* Ensure full width */
+    padding: 0 15px; /* Add horizontal padding if needed */
+}
+
+.courses-section h2 {
+    margin: 0; 
+
+    color: black; /* Set text color to black */
+    font-weight: bold; /* Make the font bold */
+}
+
+.View-button {
+    padding: 10px 30px;
+    background-color: #c44976; /* Pink color for the button */
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: normal;
+}
+
+.View-button:hover {
+    background-color: #a9355b; /* Darker shade of pink for hover effect */
+}
+
+/* End of the CSS file */

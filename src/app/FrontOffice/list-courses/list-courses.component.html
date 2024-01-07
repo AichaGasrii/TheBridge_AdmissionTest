@@ -1,0 +1,14 @@
+<div class="courses-section">
+    <div class="container">
+      <div class="course-grid">
+        <!-- Boucle sur les cours paginés -->
+        <div class="course-card" *ngFor="let course of courses">
+          <img [src]="'assets/images/'+getImageFileName(course.imagePath)" alt="{{ course.title }}">
+          <h3>{{ course.title }}</h3>
+          <p>{{ course.price }} DT/ Month</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  

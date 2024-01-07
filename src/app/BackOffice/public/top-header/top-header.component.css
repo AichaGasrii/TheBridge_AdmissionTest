@@ -1,0 +1,10 @@
+.page-header__logo_text .text-white {
+    color: white; /* Sets text color to white */
+    margin-left: 10px; /* Adds margin to the left of 'Bridge' */
+    font-weight: bold; /* Makes 'Bridge' bold */
+  }
+  
+  .page-header__logo_img {
+    /* If you need to add margin-left to the image instead */
+    margin-left: 10px; /* Adjust the margin as needed */
+  }
