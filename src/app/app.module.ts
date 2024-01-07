@@ -18,8 +18,8 @@ import { AddCourseComponent } from './BackOffice/add-course/add-course.component
 import { UpdateCourseComponent } from './BackOffice/update-course/update-course.component';
 import { DashboardComponent } from './BackOffice/dashboard/dashboard.component';
 import { FooterComponent } from './BackOffice/public/footer/footer.component';
-import { CourseDetailsComponent } from './BackOffice/course-details/course-details.component';
 import { HomepagefrontComponent } from './FrontOffice/homepagefront/homepagefront.component';
+import { CourseDetailsComponent } from './BackOffice/course-details/course-details.component';
 
 
 @NgModule({

@@ -11,7 +11,7 @@ import { CourseServiceService } from 'src/app/Services/course-service.service';
 })
 export class CourseDetailsComponent {
   courseId!: number;
-  course!: Course| undefined;
+  course!: Course;
   courseList : Course[] = [];
   constructor(
     private route: ActivatedRoute, 
@@ -50,4 +50,3 @@ getImageFileName(path?: string): string {
 
  
 }
-
