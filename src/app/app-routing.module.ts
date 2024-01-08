@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; 
-import { IndexComponent } from './BackOffice/index/index.component';
 import { AddCourseComponent } from './BackOffice/add-course/add-course.component';
 import { UpdateCourseComponent } from './BackOffice/update-course/update-course.component';
 import { DashboardComponent } from './BackOffice/dashboard/dashboard.component';
@@ -14,10 +13,7 @@ const routes: Routes = [
           component:HomepagefrontComponent
         }
             // Route for the admin page.
-        ,{
-          path:'admin',
-          component:IndexComponent
-        },
+        ,
         {
           path:'Dashboard',
           component:DashboardComponent

@@ -38,15 +38,7 @@ getCourseDetails(courseId: number): void {
   );
 }
 
-getImageFileName(path?: string): string {
-  if (path) {
-    // Path is defined, return it directly since you store only the file name in the database.
-    return path;
-  } else {
-    // Path is undefined, return a default image filename.
-    return 'default-image.jpg'; // Replace with your actual default image name if you have one.
-  }
-}
+
 
  
 }

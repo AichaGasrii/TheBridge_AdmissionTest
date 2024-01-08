@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgxCaptchaModule } from 'ngx-captcha';
-import { IndexComponent } from './BackOffice/index/index.component';
 import { IonicModule } from '@ionic/angular';
 import { SidebarComponent } from './BackOffice/public/sidebar/sidebar.component';
 import { TopHeaderComponent } from './BackOffice/public/top-header/top-header.component';
@@ -27,7 +26,6 @@ import { CourseDetailsComponent } from './BackOffice/course-details/course-detai
     AppComponent,
     HeaderComponent,
     HomepagefrontComponent,
-    IndexComponent,
     SidebarComponent,
     TopHeaderComponent,
     ListCoursesComponent,

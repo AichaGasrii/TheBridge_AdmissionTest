@@ -3,3 +3,14 @@
   }
 
 
+/* Ajout d'un espacement supplémentaire en haut de la carte pour la décaler vers le bas */
+.card-top-spacing {
+  margin-top: 4rem; /* Vous pouvez ajuster cette valeur pour augmenter ou diminuer l'espace */
+}
+
+/* Si vous souhaitez que l'espace soit plus grand sur les grands écrans, vous pouvez utiliser les media queries */
+@media (min-width: 992px) { /* pour les écrans larges comme ceux des ordinateurs de bureau */
+  .card-top-spacing {
+      margin-top: 6rem; /* Espace plus grand pour les écrans plus larges */
+  }
+}
