@@ -1,101 +1,118 @@
-
-    <body class="sb-nav-fixed">
-        <app-top-header></app-top-header>
-        <div id="layoutSidenav">
-            <app-sidebar></app-sidebar>
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Courses</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item">
-                                <a href="index.html" class="pink-link">Dashboard</a> <!-- CSS class for pink color -->
-                              </li>
-                              
-                            <li class="breadcrumb-item active">Courses </li>
-                        </ol>
-                       
-                        <div class="card mb-4">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <div>
-                                    <i class="fas fa-table me-1"></i>
-                                    Courses List
-                                </div>
-                                <button [routerLink]="['/addCourse']"  type="button" class="btn btn-lg btn-outline-primary px-5">
-                                    <i class="fadeIn animated bx bx-book-add"></i>Add Course
-                                </button>
+<body class="sb-nav-fixed">
+    <!-- En-tête de l'application -->
+    <app-top-header></app-top-header>
+    
+    <!-- Structure latérale comprenant le menu et le contenu principal -->
+    <div id="layoutSidenav">
+        <!-- Menu latéral -->
+        <app-sidebar></app-sidebar>
+        
+        <!-- Contenu principal de la page -->
+        <div id="layoutSidenav_content">
+            <main>
+                <!-- Conteneur pour le contenu fluide avec un padding sur les côtés -->
+                <div class="container-fluid px-4">
+                    <!-- Titre de la section des cours -->
+                    <h1 class="mt-4">Courses</h1>
+                    
+                    <!-- Fil d'Ariane pour une navigation facile -->
+                    <ol class="breadcrumb mb-4">
+                        <!-- Lien vers le tableau de bord principal -->
+                        <li class="breadcrumb-item">
+                            <a href="index.html" class="pink-link">Dashboard</a>
+                        </li>
+                        <!-- Section actuelle indiquée comme active -->
+                        <li class="breadcrumb-item active">Courses</li>
+                    </ol>
+                   
+                    <!-- Carte contenant la liste des cours -->
+                    <div class="card mb-4">
+                        <!-- En-tête de la carte avec le titre et le bouton d'ajout de cours -->
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <div>
+                                <!-- Icône de la liste des cours -->
+                                <i class="fas fa-table me-1"></i>
+                                Courses List
                             </div>
-                            
-                      <div class="card">
+                            <!-- Bouton pour ajouter un cours -->
+                            <button [routerLink]="['/addCourse']" type="button" class="btn btn-lg btn-outline-primary px-5">
+                                <i class="fadeIn animated bx bx-book-add"></i>Add Course
+                            </button>
+                        </div>
                         
-                          <div class="card-body">
-                              <div class="table-responsive">
-                                  <table id="example2" class="table table-striped table-bordered"style="width:100%">
-                                      <thead>
-                                          <tr>
-                                            <th>Id</th>
-                                            <th>Image</th>
-                                            <th>Title</th>
-                                            <th>Price</th>
-                                            <th>Actions</th>
-                                            <th>Details</th>
-                                          </tr>
-                                      </thead>
-                                      <tbody>
-                                        <tr *ngFor="let course of courses; let i = index">
-                                            <td>{{ i + 1 }}</td>
-                                            <td  class="table-img-column">
-                                                <img [src]="'/assets/images/' + getImageFileName(course.imagePath)" width="88" height="88" alt="{{ course.title }}">
-                                            </td>
-                                            <td>{{ course.title }}</td>
-                                            <td>{{ course.price }} DT/ Month</td>
-                                           
-                                            <td>
-                                              <div class="table-actions d-flex align-items-center gap-3 fs-6" >
-                                                
-                                                  <a [routerLink]="['/updateCourse', course.id]" class="text-warning edit-course" title="Edit">
-                                                    
-                                                        <div class="d-flex align-items-center theme-icons shadow-sm p-2 cursor-pointer rounded">
-                                                          <div class="font-22">	<i class="fadeIn animated bx bx-edit"></i>
-                                                          </div>
-                                                          <div class="ms-2">edit</div>
-                                                        </div>
-                                                     
-                                                  </a>
-                                                  <a href="javascript:;" (click)="deleteCourse(course.id)" class="text-danger delete-course" title="Delete">
-                                                    <div class="d-flex align-items-center theme-icons shadow-sm p-2 cursor-pointer rounded">
-                                                        <div class="font-22">	<i class="fadeIn animated bx bx-trash-alt"></i>
-                                                        </div>
-                                                        <div class="ms-2">Delete</div>
-                                                      </div>
-                                                  </a> 
-                                              </div>
-                                            </td>
-                                            <td>
-                                                <a [routerLink]="['/courseDetails', course?.id]" class="text-primary view-details" title="View">
-                                                    <div class="d-flex align-items-center theme-icons shadow-sm p-2 cursor-pointer rounded">
-                                                        <div class="font-22">	<i class="fadeIn animated bx bx-detail"></i>
-                                                        </div>
-                                                        <div class="ms-2">View details</div>
-                                                      </div>
-                                                  </a>
+                        <!-- Carte pour le tableau des cours -->
+                        <div class="card">
+                            <!-- Corps de la carte contenant le tableau -->
+                            <div class="card-body">
+                                <!-- Tableau responsive pour une meilleure visibilité sur les appareils mobiles -->
+                                <div class="table-responsive">
+                                    <!-- Définition du tableau -->
+                                    <table id="example2" class="table table-striped table-bordered" style="width:100%">
+                                        <!-- En-tête du tableau -->
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Image</th>
+                                                <th>Title</th>
+                                                <th>Price</th>
+                                                <th>Actions</th>
+                                                <th>Details</th>
+                                            </tr>
+                                        </thead>
+                                        <!-- Corps du tableau -->
+                                        <tbody>
+                                            <!-- Boucle sur les cours pour générer les lignes du tableau -->
+                                            <tr *ngFor="let course of courses; let i = index">
+                                                <!-- Affichage de l'index de la ligne -->
+                                                <td>{{ i + 1 }}</td>
+                                                <!-- Colonne pour l'image du cours -->
+                                                <td class="table-img-column">
+                                                    <img [src]="'/assets/images/' + getImageFileName(course.imagePath)" width="88" height="88" alt="{{ course.title }}">
                                                 </td>
-                                          </tr>
-                                      </tbody>
-                                     
-                                  </table>
-                              </div>
-                          </div>
-                      </div>
+                                                <!-- Titre du cours -->
+                                                <td>{{ course.title }}</td>
+                                                <!-- Prix du cours -->
+                                                <td>{{ course.price }} DT/ Month</td>
+                                               
+                                                <!-- Actions possibles (modifier, supprimer) -->
+                                                <td>
+                                                    <div class="table-actions d-flex align-items-center gap-3 fs-6">
+                                                        <!-- Lien pour modifier le cours -->
+                                                        <a [routerLink]="['/updateCourse', course.id]" class="text-warning edit-course" title="Edit">
+                                                            <div class="d-flex align-items-center theme-icons shadow-sm p-2 cursor-pointer rounded">
+                                                                <div class="font-22"><i class="fadeIn animated bx bx-edit"></i></div>
+                                                                <div class="ms-2">edit</div>
+                                                            </div>
+                                                        </a>
+                                                        <!-- Lien pour supprimer le cours -->
+                                                        <a href="javascript:;" (click)="deleteCourse(course.id)" class="text-danger delete-course" title="Delete">
+                                                            <div class="d-flex align-items-center theme-icons shadow-sm p-2 cursor-pointer rounded">
+                                                                <div class="font-22"><i class="fadeIn animated bx bx-trash-alt"></i></div>
+                                                                <div class="ms-2">Delete</div>
+                                                            </div>
+                                                        </a> 
+                                                    </div>
+                                                </td>
+                                                <!-- Lien pour voir les détails du cours -->
+                                                <td>
+                                                    <a [routerLink]="['/courseDetails', course?.id]" class="text-primary view-details" title="View">
+                                                        <div class="d-flex align-items-center theme-icons shadow-sm p-2 cursor-pointer rounded">
+                                                            <div class="font-22"><i class="fadeIn animated bx bx-detail"></i></div>
+                                                            <div class="ms-2">View details</div>
+                                                        </div>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                               
-                <!-- end page content-->
-                </main>
-                <app-footer></app-footer>
-            </div>
+                </div>
+            </main>
+            <!-- Pied de page de l'application -->
+            <app-footer></app-footer>
         </div>
-    
-   
-
-    </body>
+    </div>
+</body>

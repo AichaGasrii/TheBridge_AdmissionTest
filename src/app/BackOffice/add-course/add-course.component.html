@@ -5,63 +5,77 @@
       <app-sidebar></app-sidebar>
       <div id="layoutSidenav_content">
           <main>
-              <div class="container-fluid px-4">
-                  <h1 class="mt-4">Courses</h1>
-                  <ol class="breadcrumb mb-4">
-                      <li class="breadcrumb-item">
-                          <a href="index.html" class="pink-link">Courses</a> <!-- CSS class for pink color -->
-                        </li>
-                        
-                      <li class="breadcrumb-item active">Add Course </li>
-                  </ol>
-                 
-                 <!-- Card for Adding New Course -->
-          
+       <!-- Conteneur principal pour le contenu du cours -->
+  <div class="container-fluid px-4">
+    <!-- Titre de la page -->
+    <h1 class="mt-4">Courses</h1>
+    <!-- Fil d'Ariane pour la navigation -->
+    <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item">
+        <a href="index.html" class="pink-link">Courses</a> <!-- Lien vers la page des cours -->
+      </li>
+      <li class="breadcrumb-item active">Add Course</li> <!-- Section actuelle -->
+    </ol>
+
+    <!-- Carte pour l'ajout d'un nouveau cours -->
     <div class="card">
       <div class="card-body">
-        <div class="border p-3 rounded">
-        <h6 class="mb-0 text-uppercase">Add New Course</h6>
-        <hr>
-         <!-- add-course.component.html -->
+        <!-- Formulaires pour l'ajout d'un cours -->
         <form class="row g-3" (ngSubmit)="onSubmit(courseForm)" #courseForm="ngForm" enctype="multipart/form-data">
+          
+          <!-- Section de téléchargement d'image -->
           <div class="col-12">
             <div class="col-xl-9 mx-auto">
-                <h6 class="mb-0 text-uppercase">Image Uploadify</h6>
-                <hr/>
-                <div class="card" >
-                    <div class="card-body">
-                        <form>
-                            <input id="image-uploadify" type="file" accept="image/png, image/jpeg, image/jpg" multiple class="form-control" (change)="onFileChange($event)" required>
-                            <div *ngIf="!selectedFile && courseForm.submitted" class="text-danger">
-                              Image is required.
-                          </div>
-                        </form>
-                    </div>
+              <h6 class="mb-0 text-uppercase">Image Uploadify</h6>
+              <hr/>
+              <div class="card">
+                <div class="card-body">
+                  <!-- Entrée pour le téléchargement de fichier image -->
+                  <input id="image-uploadify" type="file" accept="image/png, image/jpeg, image/jpg" 
+                          class="form-control" (change)="onFileChange($event)" required>
+                 
+                  <div *ngIf="!selectedFile && courseForm.submitted" class="text-danger">
+                    Image is required.
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-        
+          </div>
+
+          <!-- Champ pour le titre du cours -->
           <div class="col-12">
             <label for="title" class="form-label">Title</label>
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Your course Title Here" aria-label="Recipient's username" aria-describedby="basic-addon2" id="title" name="title" [(ngModel)]="course.title" #title="ngModel" required> <span class="input-group-text" id="basic-addon2">example: HTML/CSS</span>
-              
+              <!-- Entrée pour le titre, liée au modèle de données course.title -->
+              <input type="text" class="form-control" placeholder="Your course Title Here" 
+                     aria-label="Recipient's username" aria-describedby="basic-addon2" 
+                     id="title" name="title" [(ngModel)]="course.title" #title="ngModel" required> 
+              <span class="input-group-text" id="basic-addon2">example: HTML/CSS</span>
             </div>
+            <!-- Message d'erreur si le titre n'est pas saisi -->
             <div *ngIf="title.invalid && title.touched" class="text-danger">
               Title is required.
+            </div>
           </div>
-          </div>
+
+          <!-- Champ pour le prix du cours -->
           <div class="col-12">
             <label for="price" class="form-label">Price</label>
             <div class="input-group">
-              <input type="number" class="form-control"  placeholder="Your course Price Here" aria-label="Dollar amount (with dot and two decimal places)" id="price" name="price" [(ngModel)]="course.price" #price="ngModel" required> <span class="input-group-text">DT</span>
+              <!-- Entrée pour le prix, liée au modèle de données course.price -->
+              <input type="number" class="form-control" placeholder="Your course Price Here" 
+                     aria-label="Dollar amount (with dot and two decimal places)" 
+                     id="price" name="price" [(ngModel)]="course.price" #price="ngModel" required> 
+              <span class="input-group-text">DT</span>
               <span class="input-group-text">0.00</span>
             </div>
+            <!-- Message d'erreur si le prix n'est pas saisi -->
             <div *ngIf="price.invalid && price.touched" class="text-danger">
               Price is required.
+            </div>
           </div>
-          </div>
-         
+
+          <!-- Bouton de soumission du formulaire -->
           <div class="col-12">
             <div class="d-grid">
               <button type="submit" class="btn btn-primary" [disabled]="courseForm.invalid">Add Course</button>
@@ -69,12 +83,8 @@
           </div>
         </form>
       </div>
-      </div>
     </div>
-        </div>
-      
-      
-                         
+  </div>         
           <!-- end page content-->
           </main>
           <app-footer></app-footer>
